@@ -1,0 +1,384 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Richmond's Premier Plumbing Service | Advanced Plumbing, LLC</title>
+    <meta name="description" content="Advanced Plumbing, LLC is Richmond's top-rated plumbing service. Call (804) 358-1616 for expert plumbing solutions.">
+    <meta property="og:title" content="Richmond's Premier Plumbing Service | Advanced Plumbing, LLC">
+    <meta property="og:description" content="Advanced Plumbing, LLC is Richmond's top-rated plumbing service. Call (804) 358-1616 for expert plumbing solutions.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            scroll-behavior: smooth;
+            color: #333;
+        }
+        header {
+            background-color: #1a1a2e;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 32px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header .logo {
+            font-weight: 800;
+        }
+        header .call-now {
+            background-color: #FF6B35;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 16px 36px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        .hero {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.05) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0.05) 75%, transparent 75%, transparent);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        .hero .cta-buttons {
+            position: relative;
+            z-index: 1;
+        }
+        .hero .cta-buttons a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+        .hero .cta-buttons a.call-now {
+            background-color: #FF6B35;
+            color: white;
+            animation: pulse 2s infinite;
+        }
+        .hero .cta-buttons a.quote {
+            border: 2px solid white;
+            color: white;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        section {
+            padding: 80px 32px;
+        }
+        .trust-bar {
+            background-color: #1a1a2e;
+            color: white;
+            display: flex;
+            justify-content: space-evenly;
+            text-align: center;
+        }
+        .trust-bar div {
+            flex: 1;
+        }
+        .trust-bar div i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        .trust-bar div p {
+            margin: 5px 0;
+        }
+        .services, .about-us, .reviews, .contact {
+            background-color: #ffffff;
+        }
+        .why-choose-us {
+            background-color: #f8f9fa;
+        }
+        .services h2, .why-choose-us h2, .about-us h2, .reviews h2, .contact h2 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .services .cards, .reviews .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .services .card, .reviews .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            padding: 32px;
+            text-align: center;
+        }
+        .services .card i, .reviews .card i {
+            font-size: 2rem;
+            color: #FF6B35;
+            margin-bottom: 10px;
+        }
+        .why-choose-us .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px;
+        }
+        .why-choose-us .benefits {
+            padding-right: 20px;
+        }
+        .why-choose-us .benefits p {
+            margin-bottom: 20px;
+        }
+        .why-choose-us .benefits i {
+            color: #28a745;
+            margin-right: 10px;
+        }
+        .why-choose-us blockquote {
+            padding: 20px;
+            border-left: 4px solid #FF6B35;
+            background-color: #ffffff;
+        }
+        .why-choose-us blockquote p {
+            margin: 0;
+            font-style: italic;
+        }
+        .about-us p {
+            border-left: 4px solid #FF6B35;
+            padding-left: 16px;
+            margin: 0;
+        }
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .contact form input, .contact form textarea {
+            width: 100%;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 14px;
+            margin-bottom: 20px;
+            font-size: 1rem;
+        }
+        .contact form input:focus, .contact form textarea:focus {
+            border-color: #FF6B35;
+        }
+        .contact form button {
+            width: 100%;
+            background-color: #FF6B35;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 16px 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        .cta-banner {
+            background-color: #FF6B35;
+            color: white;
+            text-align: center;
+        }
+        .cta-banner h2 {
+            font-size: 2rem;
+        }
+        .cta-banner p {
+            margin: 20px 0;
+        }
+        .cta-banner a {
+            background-color: white;
+            color: #1a1a2e;
+            border-radius: 50px;
+            padding: 16px 36px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-top: 20px;
+            animation: pulse 2s infinite;
+        }
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        footer p {
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .services .cards, .reviews .cards {
+                grid-template-columns: 1fr;
+            }
+            .why-choose-us .content {
+                grid-template-columns: 1fr;
+            }
+            section {
+                padding: 50px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Advanced Plumbing, LLC</div>
+        <div>
+            <i class="fas fa-phone-alt"></i> (804) 358-1616
+            <button class="call-now">Call Now</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Richmond's Expert Plumbing Services</h1>
+        <p>Providing Reliable Solutions for All Your Plumbing Needs</p>
+        <div class="cta-buttons">
+            <a href="tel:8043581616" class="call-now">Call Now</a>
+            <a href="#contact" class="quote">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <section class="trust-bar">
+        <div>
+            <i class="fas fa-calendar-alt"></i>
+            <p>10+</p>
+            <p>Years in Business</p>
+        </div>
+        <div>
+            <i class="fas fa-star"></i>
+            <p>4.3</p>
+            <p>Star Rating</p>
+        </div>
+        <div>
+            <i class="fas fa-comments"></i>
+            <p>128</p>
+            <p>Reviews</p>
+        </div>
+        <div>
+            <i class="fas fa-shield-alt"></i>
+            <p>Certified</p>
+            <p>Licensed & Insured</p>
+        </div>
+    </section>
+
+    <section class="services">
+        <div>
+            <h2>Our Plumbing Services</h2>
+        </div>
+        <div class="cards">
+            <div class="card">
+                <i class="fas fa-water"></i>
+                <h3>Leak Repairs</h3>
+                <p>Quick and efficient leak repair services to prevent water damage.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-wrench"></i>
+                <h3>Pipe Installation</h3>
+                <p>Professional pipe installation for residential and commercial projects.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-toilet"></i>
+                <h3>Clog Removal</h3>
+                <p>Fast removal of clogs to get your plumbing working smoothly again.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose-us">
+        <h2>Why Richmond Families Trust Us</h2>
+        <div class="content">
+            <div class="benefits">
+                <p><i class="fas fa-check-circle"></i> Experienced team of licensed professionals</p>
+                <p><i class="fas fa-check-circle"></i> 24/7 emergency service</p>
+                <p><i class="fas fa-check-circle"></i> Transparent pricing with no hidden fees</p>
+                <p><i class="fas fa-check-circle"></i> 100% satisfaction guarantee</p>
+            </div>
+            <blockquote>
+                <p>"Advanced Plumbing exceeded my expectations! Quick service and very professional."</p>
+                <p><strong>John D., Richmond</strong></p>
+            </blockquote>
+        </div>
+    </section>
+
+    <section class="about-us">
+        <h2>About Advanced Plumbing, LLC</h2>
+        <p>At Advanced Plumbing, LLC, we are proud to serve the Richmond community with over a decade of trusted plumbing services. Our local roots and commitment to quality make us the go-to choice for all your plumbing needs.</p>
+    </section>
+
+    <section class="reviews">
+        <h2>What Our Customers Say</h2>
+        <div class="cards">
+            <div class="card">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                <p>"Prompt service and friendly staff. Highly recommend Advanced Plumbing!"</p>
+                <p><strong>Susan B., Henrico</strong></p>
+            </div>
+            <div class="card">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <p>"Fixed my leak in no time. Very professional and courteous."</p>
+                <p><strong>Mike W., Richmond</strong></p>
+            </div>
+            <div class="card">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                <p>"Great service at a fair price. I will definitely use them again."</p>
+                <p><strong>Linda K., Chesterfield</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Us for a Free Quote</h2>
+        <p>Fill out the form below and our team will get back to you shortly.</p>
+        <form>
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="tel" name="phone" placeholder="Your Phone" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section class="cta-banner">
+        <h2>Ready to Get Started?</h2>
+        <p>Call us at (804) 358-1616</p>
+        <a href="tel:8043581616">Call Now</a>
+    </section>
+
+    <footer>
+        <p>Advanced Plumbing, LLC | (804) 358-1616 | 5324 Distributor Dr, Richmond, VA 23225</p>
+        <p>&copy; 2023 Advanced Plumbing, LLC</p>
+    </footer>
+</body>
+</html>
+```
